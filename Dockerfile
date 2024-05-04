@@ -14,7 +14,7 @@ RUN pip install -r requirements.txt
 
 
 COPY ./entrypoint.sh .
-RUN chmod +x websocket/entrypoint.sh
+RUN chmod +x /websocket/entrypoint.sh
 
 COPY . .
 
