@@ -1,6 +1,6 @@
 FROM python:3.11.4-slim-buster
 
-WORKDIR /usr/src/app
+WORKDIR /websocket
 
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
@@ -14,9 +14,8 @@ RUN pip install -r requirements.txt
 
 
 COPY ./entrypoint.sh .
-RUN sed -i 's/\r$//g' /usr/src/app/entrypoint.sh
-RUN chmod +x /usr/src/app/entrypoint.sh
+RUN chmod +x websocket/entrypoint.sh
 
 COPY . .
 
-ENTRYPOINT ["/usr/src/app/entrypoint.sh"]
+ENTRYPOINT ["/websocket/entrypoint.sh"]
